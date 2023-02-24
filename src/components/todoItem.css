@@ -1,0 +1,17 @@
+.remind {
+    border-left: 5px solid rgb(4, 212, 4);
+}
+
+div {
+    position: relative;
+    background-color: rgb(163, 255, 163);
+    border: 1px solid black;
+    padding: 1em;
+    margin: 0.1em 0.5em;
+}
+
+div > i {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}

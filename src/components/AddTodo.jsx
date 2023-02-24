@@ -33,15 +33,14 @@ class AddTodo extends React.Component {
                 date: this.state.todoDate,
                 reminder: this.state.setReminder
             }
+            this.props.onSubmit(newTodo);
+        
+            this.setState({
+                todoText: '',
+                todoDate: '',
+                setReminder: false
+            });
         }
-        this.props.onSubmit(newTodo);
-        
-        this.setState({
-            todoText: '',
-            todoDate: '',
-            setReminder: false
-        });
-        
     }
 
     render() {
