@@ -12,10 +12,8 @@ class Child extends React.Component {
     
     render() {
         return (
-            <fieldset>
-            <legend>Enter a temperature in {this.props.scale}</legend>
-            <input value={this.props.temp} onChange={this.handleChange}/>
-          </fieldset>
+            <>
+          </>
         );
     }    
 }
