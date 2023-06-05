@@ -1,66 +1,40 @@
-import React from 'react';
-import Child from './Child';
+import React, { createContext, useContext, useState } from 'react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentTemperature: '',
-      currentUnit: 'c'
-    };
-    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
-    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
-  }
 
-  tempUnits = {
-    c: 'Celsius',
-    f: 'Fahrenheit'
-  };
+let userContext = createContext();
 
-  toCelsius(tempF) {
-    return (tempF - 32) * 5/9;
-  }
+function App() {
+  let [user, setUser] = useState('John Doe');
 
-  toFahrenheit(tempC, ) {
-    return (9/5 * tempC) + 32;
-  }
-  
-  handleCelsiusChange(value) {
-    this.setState({currentUnit: 'c', currentTemperature: value});
-  }
+  return (
+    <>
+    <userContext.Provider value={user}>
+      <h1>Component 1</h1>
+      <Comp1/>
+    </userContext.Provider>
 
-  handleFahrenheitChange(value) {
-    this.setState({currentUnit: 'f', currentTemperature: value});
-  }
+    </>
+  );
+}
 
-  tryConvert(temp, converter) {
-    let temperature = parseFloat(temp);
-    if(Number.isNaN(temperature)) {
-      return '';
-    }
-    temperature = Math.round(
-      converter(temperature) * 1000
-      ) / 1000;
-    return temperature.toString();
-  }
+function Comp1() {
 
-  render() {
-    const scale = this.state.currentUnit;
-    const temperature = this.state.currentTemperature;
-    const celsius = scale === 'f' ? this.tryConvert(temperature, this.toCelsius) : temperature;
-    const fahrenheit = scale === 'c' ? this.tryConvert(temperature, this.toFahrenheit) : temperature;
+  return (
+    <>
+    <h2>Component 2</h2>
+    <Comp2 />
+    </>
+  );
+}
 
-    return (
-      <div>
-        <h1>Temperature converter</h1>
-        <Child temp={celsius} onChange={this.handleCelsiusChange} scale={"c"} />
-        <Child temp={fahrenheit} onChange={this.handleFahrenheitChange} scale={"f"} />
-        <div>
-          {celsius >= 100 ? "The water is boiling" : "Not boiling yet"}
-        </div>
-      </div>
-    );
-  }
+function Comp2() {
+  let user = useContext(userContext);
+  return (
+    <>
+    <h3>Component x3</h3>
+    <p>The value is {user}</p>        
+    </>
+  );
 }
 
 export default App;
