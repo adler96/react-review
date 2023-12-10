@@ -1,0 +1,98 @@
+*, ::before, ::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#root {
+  width: 50%;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: rgb(160, 160, 253);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 0.25rem;
+  background-color: rgb(155, 250, 155);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.25rem;
+  background-color: aqua;
+}
+
+.todo-form {
+  background-color: rgb(247, 203, 203);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.todos-list {
+  background-color: rgb(219, 128, 16);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.todo-item {
+  background-color: rgb(127, 127, 253);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.reminder {
+  border-left: 4px solid green;
+}
+
+.title {
+  font-size: 1.3em;
+}
+
+.btn-green {
+  background-color: rgb(193, 247, 113);
+  border: none;
+  padding: 0.25rem;
+  border-radius: 0.2rem;
+}
+
+.btn-red {
+  background-color: rgb(241, 92, 92);
+  border: none;
+  padding: 0.25rem;  
+  border-radius: 0.2rem;
+}
+
+.task {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+

@@ -1,15 +1,17 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import './index.css'
 
-function TodosList({ todos }) {
+function TodosList({ todos, onToggleReminder, onDeleteTask }) {
+
   return (
-    <>
-      {todos.map((item, index) => {
+    <div className="todos-list">
+      { todos.map((item) => {
         return (
-          <TodoItem key={index} todo={item} />
+          <TodoItem key={item.id} todo={item} onDelete={onDeleteTask} onToggle={onToggleReminder} />
         )
-      })}
-    </>
+      }) }
+    </div>
   )
 }
 

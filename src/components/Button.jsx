@@ -1,10 +1,9 @@
 import React from 'react'
+import './index.css'
 
-function Button({ text }) {
+function Button({ show, onToggle }) {
   return (
-    <>
-      <button>{text}</button>
-    </>
+      <button onClick={onToggle} className={show ? 'btn-red' : 'btn-green' } >{ show ? 'Close' : 'Add' }</button>
   )
 }
 

@@ -1,10 +1,9 @@
 import React from 'react';
+import './index.css'
 
 function Title({ content }) {
   return (
-    <>
-    { content }
-    </>
+      <h1 className='title'>{ content }</h1>
   )
 }
 
